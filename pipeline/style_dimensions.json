@@ -1,0 +1,74 @@
+[
+ {
+  "key": "shot_volume",
+  "label": "Shot volume",
+  "unit": "shots per match",
+  "meaning": "How often the team gets the ball into a shooting position.",
+  "high": "creates chances constantly — sustained pressure, lots of attempts, often from a settled attack",
+  "low": "rarely shoots — either starved of the ball or waiting for a specific opening rather than working one",
+  "higher_is_forward": true
+ },
+ {
+  "key": "shot_quality",
+  "label": "Shot quality",
+  "unit": "% on target",
+  "meaning": "The share of shots that hit the target, a proxy for how good the chances are rather than how many.",
+  "high": "picks its moments — fewer wild efforts, shots taken from positions worth shooting from",
+  "low": "shoots from anywhere — speculative efforts from distance that rarely trouble the keeper",
+  "higher_is_forward": true
+ },
+ {
+  "key": "territory",
+  "label": "Territorial control",
+  "unit": "shot difference",
+  "meaning": "Shots taken minus shots conceded. The clearest single measure of who spends the match in the opposition half.",
+  "high": "dominates territory — the opposition spends the match defending",
+  "low": "lives under pressure — concedes far more attempts than it takes, whether by design or by being outplayed",
+  "higher_is_forward": true
+ },
+ {
+  "key": "defensive_exposure",
+  "label": "Defensive exposure",
+  "unit": "shots conceded",
+  "meaning": "How many attempts the team allows.",
+  "high": "allows a lot of shots — a stretched or passive defence, or a side that accepts chances against in exchange for chances for",
+  "low": "allows very little — a compact, well-drilled defensive shape",
+  "higher_is_forward": false
+ },
+ {
+  "key": "set_piece",
+  "label": "Wide and set-piece play",
+  "unit": "corners per match",
+  "meaning": "Corners won, which rises with crossing, wide overloads and sustained pressure in the final third.",
+  "high": "attacks through the flanks and wins a steady stream of corners — expect aerial threat and second balls",
+  "low": "plays through the middle or in transition, and rarely builds the kind of sustained wide pressure that produces corners",
+  "higher_is_forward": true
+ },
+ {
+  "key": "aggression",
+  "label": "Aggression",
+  "unit": "fouls per match",
+  "meaning": "Fouls committed. High numbers mean a side that stops play rather than retreating.",
+  "high": "disrupts constantly — tactical fouling, pressing the ball carrier, breaking up the opposition's rhythm",
+  "low": "lets the game flow — defends by position rather than by contact",
+  "higher_is_forward": true
+ },
+ {
+  "key": "fouls_drawn",
+  "label": "Fouls drawn",
+  "unit": "fouls won per match",
+  "meaning": "Fouls the opposition commits against them, which rises with dribbling, holding the ball under pressure and drawing contact.",
+  "high": "gets fouled often — carries the ball into contact and earns free kicks in dangerous areas",
+  "low": "is rarely fouled — moves the ball quickly rather than running at defenders",
+  "higher_is_forward": true
+ },
+ {
+  "key": "discipline",
+  "label": "Card rate",
+  "unit": "cards per foul",
+  "meaning": "How often the team's fouls are punished, which separates a side that fouls cleanly and cynically from one that fouls recklessly.",
+  "high": "books easily — fouls are late, high or in dangerous areas",
+  "low": "fouls cleanly — lots of contact, few cautions",
+  "higher_is_forward": false
+ }
+]

@@ -1,0 +1,68 @@
+name: Daily build
+
+on:
+  schedule:
+    # Twice a day (UTC): 06:17 picks up overnight European results,
+    # 18:17 refreshes forecasts before the evening kickoffs.
+    - cron: "17 6 * * *"
+    - cron: "17 18 * * *"
+  workflow_dispatch:        # "Run workflow" button for a manual refresh
+  push:
+    branches: [main]
+    paths: ["pipeline/**", "site/**", "requirements.txt", ".github/workflows/**"]
+
+permissions:
+  contents: write           # commit the ledger back
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pitchlab-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Build site
+        run: python -m pipeline.build --out public
+
+      - name: Commit ledger
+        run: |
+          git config user.name  "pitchlab-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ledger.json
+          if git diff --cached --quiet; then
+            echo "Ledger unchanged"
+          else
+            git commit -m "Ledger update $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
