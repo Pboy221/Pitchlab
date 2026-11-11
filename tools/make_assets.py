@@ -14,7 +14,8 @@ from playwright.async_api import async_playwright
 ROOT = Path(__file__).resolve().parent.parent
 STATIC = ROOT / "site" / "static"
 FONT = (STATIC / "fonts" / "inter-latin-wght-normal.woff2").as_uri()
-NAVY, GOLD, GOLD_DIM, BLUE, GREY = "#0A1628", "#F5B82E", "#C8901A", "#6CB8FF", "#94A3BC"
+NAVY, GOLD, GOLD_DIM, BLUE, GREY = "#0A0C0E", "#3CC8DC", "#2499AD", "#F0A35E", "#8C969F"
+TILE = "#1B2026"   # logo tile; GOLD is the accent (now cyan), BLUE the away colour (amber)
 
 BASE = f"""<style>
 @font-face{{font-family:Inter;src:url({FONT}) format('woff2');font-weight:100 900}}
@@ -28,29 +29,31 @@ def icon_html(size: int, pad: float, radius: float) -> str:
     return BASE + f"""<div style="width:{size}px;height:{size}px;display:grid;place-items:center;
       background:{NAVY if pad else 'transparent'}">
       <div style="width:{inner}px;height:{inner}px;border-radius:{inner * radius}px;
-        background:linear-gradient(145deg,{GOLD},{GOLD_DIM});display:grid;place-items:center;
-        font-weight:800;font-size:{inner * 0.62}px;color:{NAVY};letter-spacing:-.04em;
+        background:{TILE};box-shadow:inset 0 0 0 {max(1, inner*0.03)}px rgba(60,200,220,.45);
+        display:grid;place-items:center;
+        font-weight:800;font-size:{inner * 0.62}px;color:{GOLD};letter-spacing:-.04em;
         line-height:1;padding-bottom:{inner * 0.02}px">P</div></div>"""
 
 
-OG = BASE + f"""<div style="width:1200px;height:630px;background:{NAVY};color:#F5F7FB;
+OG = BASE + f"""<div style="width:1200px;height:630px;background:{NAVY};color:#F2F5F7;
   padding:72px 80px;display:flex;flex-direction:column;justify-content:space-between">
   <div style="display:flex;align-items:center;gap:22px">
-    <div style="width:84px;height:84px;border-radius:22px;background:linear-gradient(145deg,{GOLD},{GOLD_DIM});
-      display:grid;place-items:center;font-weight:800;font-size:54px;color:{NAVY}">P</div>
+    <div style="width:84px;height:84px;border-radius:22px;background:{TILE};
+      box-shadow:inset 0 0 0 2px rgba(60,200,220,.45);
+      display:grid;place-items:center;font-weight:800;font-size:54px;color:{GOLD}">P</div>
     <div style="font-weight:800;font-size:56px;letter-spacing:-.02em">PitchLab</div>
   </div>
   <div>
     <div style="font-weight:800;font-size:68px;line-height:1.05;letter-spacing:-.03em;max-width:980px">
       Football predictions,<br><span style="color:{GOLD}">scored in public.</span></div>
-    <div style="margin-top:22px;font-size:27px;color:#BAC6D9;max-width:960px;line-height:1.4">
+    <div style="margin-top:22px;font-size:27px;color:#B1BAC3;max-width:960px;line-height:1.4">
       Match, player, corner and card probabilities, logged before kickoff.</div>
   </div>
   <div>
     <div style="display:flex;height:16px;border-radius:9px;overflow:hidden;width:100%">
       <i style="width:52%;background:{GOLD}"></i><i style="width:24%;background:{GREY}"></i>
       <i style="width:24%;background:{BLUE}"></i></div>
-    <div style="margin-top:18px;font-size:23px;color:#8E9FBB;letter-spacing:.02em">
+    <div style="margin-top:18px;font-size:23px;color:#87929D;letter-spacing:.02em">
       Premier League · La Liga · Serie A · Bundesliga · Ligue 1</div>
   </div>
 </div>"""
@@ -58,9 +61,10 @@ OG = BASE + f"""<div style="width:1200px;height:630px;background:{NAVY};color:#F
 FAVICON_SVG = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
 <stop offset="0" stop-color="{GOLD}"/><stop offset="1" stop-color="{GOLD_DIM}"/></linearGradient></defs>
-<rect width="64" height="64" rx="15" fill="url(#g)"/>
+<rect width="64" height="64" rx="15" fill="{TILE}"/>
+<rect x="1.5" y="1.5" width="61" height="61" rx="13.5" fill="none" stroke="{GOLD}" stroke-opacity=".45" stroke-width="2"/>
 <path d="M22 50V14h14.5c7.6 0 12.5 4.6 12.5 11.6S44.1 37.2 36.5 37.2H29.8V50zm7.8-19.3h5.9
-c3.6 0 5.6-1.9 5.6-5.1s-2-5.1-5.6-5.1h-5.9z" fill="{NAVY}"/></svg>
+c3.6 0 5.6-1.9 5.6-5.1s-2-5.1-5.6-5.1h-5.9z" fill="{GOLD}"/></svg>
 """
 
 
