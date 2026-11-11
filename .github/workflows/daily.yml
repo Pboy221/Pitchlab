@@ -26,6 +26,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          # Always build from the newest main, not the commit that triggered the
+          # run, so the ledger includes whatever the previous run just committed.
+          ref: main
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -54,7 +57,9 @@ jobs:
             echo "Ledger unchanged"
           else
             git commit -m "Update $(date -u +'%Y-%m-%d %H:%M') UTC"
-            git pull --rebase origin main
+            # runs are serialised (concurrency group), so this only matters if a
+            # human pushed mid-run; keep the bot's ledger if both touched it
+            git pull --rebase -X theirs origin main
             git push origin HEAD:main
           fi
 
