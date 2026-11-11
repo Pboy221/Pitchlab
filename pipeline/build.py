@@ -19,7 +19,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from . import backtest, config as C, ledger, markets, sources, styles
+from . import backtest, config as C, ledger, markets, site_files, sources, styles
 from .players import PlayerModel
 
 log = logging.getLogger("pitchlab")
@@ -230,7 +230,10 @@ def build(mode: str, as_of: str | None, out: Path, ledger_path: Path, fpl_file: 
     marker = "/*__PITCHLAB_DATA__*/null"
     if marker not in template:
         raise SystemExit("Template is missing the data marker.")
-    (out / "index.html").write_text(template.replace(marker, payload.replace("</", "<\\/")))
+    page = template.replace(marker, payload.replace("</", "<\\/"))
+    (out / "index.html").write_text(page.replace("__SITE_URL__", C.SITE_URL))
+    stamp = pd.Timestamp.now(tz="UTC")
+    site_files.write(out, stamp.strftime("%Y%m%d%H%M"), stamp.date().isoformat())
     log.info("Wrote %d fixtures, %d recent results, %d leagues", len(fixtures_out),
              len(recent_out), len(leagues_out))
     return data

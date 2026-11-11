@@ -1,48 +1,95 @@
 # PitchLab
 
-Match, player, corner and card forecasts for the Premier League, La Liga,
-Serie A, Bundesliga and Ligue 1 — rebuilt automatically twice a day from free
-data, with every forecast logged before kickoff and scored afterwards.
+![PitchLab — football predictions, scored in public](site/static/og.png)
+
+**Live: [pboy221.github.io/Pitchlab](https://pboy221.github.io/Pitchlab/)**
+
+Match, player, corner and card probabilities for the Premier League, La Liga,
+Serie A, Bundesliga and Ligue 1. The site rebuilds itself twice a day from free
+data, and every forecast is written to a public ledger before kickoff and
+scored after the final whistle, so the accuracy claims can be checked rather
+than taken on trust.
+
+## What it shows
+
+- **Fixtures** for the next two weeks: home/draw/away, expected goals, likeliest
+  scores, over 2.5, both teams to score, corners and cards (with the referee's
+  own strictness once appointed).
+- **Players** (Premier League): chance to score, assist and be booked, plus
+  predicted lineups.
+- **Recent results** next to what the model said beforehand.
+- **Accuracy**: walk-forward backtest (log loss, Brier score, calibration) and
+  the live ledger.
+- **Styles**: eight playing-style dimensions per team, and whether a side
+  genuinely changes its game by fixture (tested with a false-discovery correction).
+
+Each match has its own link (`#match-…`) with a Share button, and the site can be
+installed to a phone's home screen and opened offline.
 
 ## How it updates itself
 
-`.github/workflows/daily.yml` runs on GitHub Actions at 06:17 and 18:17 UTC
-(5:17 pm and 5:17 am Sydney in summer). Each run:
+`.github/workflows/daily.yml` runs on GitHub Actions twice a day (06:17 and
+18:17 UTC; GitHub's free scheduler can run late at busy times). Each run:
 
-1. downloads the latest results and stats from **football-data.co.uk**, upcoming
-   fixtures from football-data.co.uk and **openfootball**, and Premier League
-   player data from the **Fantasy Premier League** feed;
-2. refits the models and re-runs the walk-forward backtest;
-3. writes every upcoming forecast to `data/ledger.json`, settles finished
-   matches, and commits the ledger back to the repo;
-4. publishes the site to **GitHub Pages**.
+1. runs the test suite: a failing test stops the run before anything deploys;
+2. downloads results and stats from **football-data.co.uk**, upcoming fixtures
+   from football-data.co.uk and **openfootball**, and Premier League player data
+   from the **Fantasy Premier League** feed;
+3. refits the models and re-runs the backtest;
+4. logs every upcoming forecast to `data/ledger.json`, settles finished matches,
+   and commits the ledger back to the repository;
+5. publishes the site to **GitHub Pages**.
 
 If football-data.co.uk is down during the season the run fails on purpose,
-GitHub emails you, and yesterday's site stays up rather than showing stale
-numbers. Nothing needs doing — the next run retries.
+GitHub emails the owner, and the previous site stays up. The header shows how
+long ago the site was updated, and turns orange after 36 hours.
 
-## One-time setup
+## Model
 
-1. Create a **public** GitHub repository (Pages is free for public repos) and
-   push this folder to it.
-2. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Repo **Actions** tab → *Daily build* → **Run workflow** for the first build.
+| Market | Method |
+|---|---|
+| Result, scores, goals | Poisson regression on attack, defence and home advantage; time-weighted (decay 0.0015/day), ridge-shrunk toward average (1.0); Dixon-Coles correction for low-score draws |
+| Corners, cards | Same team model on their own counts, negative-binomial spread fitted per league; per-referee card multiplier with shrinkage |
+| Players | FPL xG, xA and booking rates per 90, shrunk toward position averages, scaled by minutes, availability and this match's team expectation |
+| Styles | z-scores on eight dimensions over each side's last 38 matches; situational shifts by Welch t-test with Benjamini-Hochberg correction |
 
-The site appears at `https://<your-username>.github.io/<repo-name>/`.
-GitHub turns scheduled workflows off after 60 days without repository
-activity; the ledger commit on every run keeps it active.
+Tuning was done on 2024–26 walk-forward backtests across all five leagues
+(predict each week only from matches before it). Results: 4–9% better log loss
+than each league's base rates, calibration error around 0.02.
 
-## Run it locally
+## Data and attribution
+
+Match data © [football-data.co.uk](https://www.football-data.co.uk);
+fixtures from [openfootball](https://github.com/openfootball/football.json)
+(public domain); player data from the
+[Fantasy Premier League](https://fantasy.premierleague.com) public feed. PitchLab
+is a free, non-commercial project with no ads, accounts, tracking or cookies.
+Check each source's terms before adding anything commercial.
+
+## Responsible use
+
+PitchLab publishes statistical estimates, not tips or betting advice, and does
+not take, place or facilitate bets. Intended for adults 18+. If gambling is
+causing harm, GambleAware NSW offers free, confidential support on
+1800 858 858.
+
+## Run it yourself
 
 ```bash
-pip install -r requirements.txt
-python -m pipeline.build --out public          # live data
-open public/index.html
+pip install -r requirements.txt -r requirements-dev.txt
+python -m pytest                                   # offline tests, ~10 s
+python -m pipeline.build --out public              # live data
+python -m http.server -d public                    # then open localhost:8000
 
-# offline replay from a past date using the GitHub mirror of football-data
+# replay any past date from the GitHub mirror of football-data
 python -m pipeline.build --mode mirror --as-of 2026-03-14 \
     --out /tmp/replay --ledger /tmp/replay-ledger.json
 ```
+
+**Custom domain:** change `SITE_URL` in `pipeline/config.py`, then add the
+domain under the repository's Settings → Pages.
+
+**Artwork:** icons and the share image are generated by `tools/make_assets.py`.
 
 ## Layout
 
@@ -50,25 +97,20 @@ python -m pipeline.build --mode mirror --as-of 2026-03-14 \
 |---|---|
 | `pipeline/sources.py` | downloads and normalises every data source |
 | `pipeline/names.py` | maps openfootball and FPL team names onto football-data names |
-| `pipeline/ratings.py` | time-weighted Poisson team model with Dixon-Coles correction |
-| `pipeline/markets.py` | outcome, scorelines, totals, BTTS, corners, cards (with referee) |
-| `pipeline/backtest.py` | walk-forward backtest: log loss, Brier, calibration |
-| `pipeline/styles.py` | eight style dimensions and FDR-corrected situational shifts |
-| `pipeline/players.py` | Premier League scorer, assist and card probabilities |
-| `pipeline/ledger.py` | pre-kickoff forecast ledger, settled after the match |
-| `pipeline/build.py` | runs it all and writes `public/` |
-| `site/template.html` | the page; data is injected at build time |
-| `data/ledger.json` | the forecast record (written by the bot) |
+| `pipeline/ratings.py` | team strength model |
+| `pipeline/markets.py` | per-fixture markets |
+| `pipeline/backtest.py` | walk-forward backtest and calibration |
+| `pipeline/styles.py` | style profiles and situational shifts |
+| `pipeline/players.py` | Premier League player markets |
+| `pipeline/ledger.py` | pre-kickoff forecast ledger |
+| `pipeline/site_files.py` | manifest, service worker, 404, robots, sitemap |
+| `pipeline/build.py` | runs everything and writes `public/` |
+| `site/template.html` | the page (data injected at build time) |
+| `site/static/` | self-hosted Inter font, icons, share image |
+| `tests/` | offline test suite |
+| `data/ledger.json` | the forecast record, written by the bot |
 
-## Model in brief
+## Licence
 
-Goals: Poisson regression on attack, defence and home advantage, weighted so
-recent matches count more (decay 0.0015/day) and shrunk toward average (ridge
-1.0) so newly promoted sides don't get extreme ratings; Dixon-Coles ρ corrects
-low-score draws. Settings were chosen on 2024-26 walk-forward backtests across
-all five leagues: 6–9% better log loss than the league's base rates, with
-calibration error around 0.02.
-
-Corners and cards use the same team model on their own counts, with a
-negative-binomial spread fitted per league. Card totals carry a shrunk
-per-referee multiplier where the referee is known.
+Code: MIT (see `LICENSE`). Inter font: SIL Open Font License
+(`site/static/fonts/OFL.txt`).

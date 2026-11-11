@@ -34,6 +34,10 @@ FPL_FIXTURES_URL = "https://fantasy.premierleague.com/api/fixtures/"
 # football-data.co.uk publishes kickoff times in UK time for every league.
 FD_TIME_ZONE = "Europe/London"
 
+# --------------------------------------------------------------------- site
+# Public address of the site. Change this one line if you move to a custom domain.
+SITE_URL = "https://pboy221.github.io/Pitchlab/"
+
 # ------------------------------------------------------------------- model
 MODEL_VERSION = "2.0.0"
 HISTORY_SEASONS = 3          # current season plus the two before it

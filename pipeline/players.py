@@ -141,9 +141,17 @@ class PlayerModel:
             lineups[side] = [{"player_id": p["player_id"], "name": p["name"],
                               "position": p["position"], "available": p["available"],
                               "start_probability": p["start_probability"]} for p in gk + out]
+        top_scorers = sorted(scorers, key=lambda x: -x["probability"])[:10]
+        shown = {p["player_id"] for p in top_scorers}
+
+        def top(rows, n):
+            """The n most likely, plus every player already in the scorer table."""
+            ranked = sorted(rows, key=lambda x: -x["probability"])
+            return [r for i, r in enumerate(ranked) if i < n or r["player_id"] in shown]
+
         return {
-            "scorers": sorted(scorers, key=lambda x: -x["probability"])[:10],
-            "assisters": sorted(assisters, key=lambda x: -x["probability"])[:8],
-            "cards": sorted(cards, key=lambda x: -x["probability"])[:8],
+            "scorers": top_scorers,
+            "assisters": top(assisters, 8),
+            "cards": top(cards, 8),
             "lineups": lineups,
         }
