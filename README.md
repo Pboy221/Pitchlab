@@ -5,7 +5,7 @@
 **Live: [pboy221.github.io/Pitchlab](https://pboy221.github.io/Pitchlab/)**
 
 Match, player, corner and card probabilities for the Premier League, La Liga,
-Serie A, Bundesliga and Ligue 1. The site rebuilds itself twice a day from free
+Serie A, Bundesliga and Ligue 1. The site rebuilds itself every six hours from free
 data, and every forecast is written to a public ledger before kickoff and
 scored after the final whistle, so the accuracy claims can be checked rather
 than taken on trust.
@@ -28,8 +28,13 @@ installed to a phone's home screen and opened offline.
 
 ## How it updates itself
 
-`.github/workflows/daily.yml` runs on GitHub Actions twice a day (06:17 and
-18:17 UTC; GitHub's free scheduler can run late at busy times). Each run:
+`.github/workflows/daily.yml` runs on GitHub Actions every six hours
+(at :17 past 00, 06, 12 and 18 UTC). GitHub's free scheduler can run late or skip
+a run at busy times, so four slots a day means a missed one never matters, and an
+independent watchdog (a Claude scheduled task every two days) checks the latest
+successful run and triggers a rebuild if the site is ever more than 30 hours old.
+Each run also commits a heartbeat (`data/last_run.txt`), which stops GitHub from
+switching the schedule off after 60 quiet days in the off-season. Each run:
 
 1. runs the test suite: a failing test stops the run before anything deploys;
 2. downloads results and stats from **football-data.co.uk**, upcoming fixtures

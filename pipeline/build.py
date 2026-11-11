@@ -29,7 +29,7 @@ NOTES = {
     "scope": "Match, corner, card and style models run on free match-level data from "
              "football-data.co.uk. Player markets cover the Premier League only and come "
              "from the free Fantasy Premier League feed.",
-    "refresh": "Rebuilt automatically twice a day. Each forecast is logged to the ledger "
+    "refresh": "Rebuilt automatically every six hours. Each forecast is logged to the ledger "
                "before kickoff and scored once the result is in.",
     "cards": "Referee strictness is estimated with shrinkage from that official's own "
              "matches; where no referee is appointed yet, card numbers use team rates only.",
