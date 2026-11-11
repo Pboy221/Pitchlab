@@ -1,9 +1,11 @@
-"""Regenerate PitchLab's icons and share image (run once; outputs are committed).
+"""Regenerate PitchLab's logo, icons and share image (outputs are committed).
 
-    pip install playwright && python tools/make_assets.py
+    pip install playwright pillow && python tools/make_assets.py
 
-Renders small HTML pages in headless Chromium so the artwork uses the same
-Inter font and navy/gold palette as the site.
+The logo is a small football pitch drawn in cyan on a black tile: outline,
+halfway line, centre circle and both penalty boxes. It is plain SVG, so the
+same drawing is used inline in the page header, as the favicon, and rendered
+to PNG for app icons and the share image.
 """
 import asyncio
 import os
@@ -14,58 +16,64 @@ from playwright.async_api import async_playwright
 ROOT = Path(__file__).resolve().parent.parent
 STATIC = ROOT / "site" / "static"
 FONT = (STATIC / "fonts" / "inter-latin-wght-normal.woff2").as_uri()
-NAVY, GOLD, GOLD_DIM, BLUE, GREY = "#0A0C0E", "#3CC8DC", "#2499AD", "#F0A35E", "#8C969F"
-TILE = "#1B2026"   # logo tile; GOLD is the accent (now cyan), BLUE the away colour (amber)
+
+BG = "#0A0C0E"       # page background
+TILE = "#14181C"     # logo tile
+CYAN = "#3CC8DC"     # accent
+AMBER = "#F0A35E"    # away colour (share image bar)
+GREY = "#8C969F"     # draw colour (share image bar)
+
+
+def logo_svg(tile: bool = True, stroke: float = 1.8) -> str:
+    """32x32 pitch mark. tile=False draws the pitch alone (for a custom background)."""
+    t = f'<rect width="32" height="32" rx="8" fill="{TILE}"/>' if tile else ""
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">{t}'
+            f'<g fill="none" stroke="{CYAN}" stroke-width="{stroke}" stroke-linejoin="round">'
+            f'<rect x="5" y="8" width="22" height="16" rx="2"/>'
+            f'<path d="M16 8v16"/><circle cx="16" cy="16" r="3.4"/>'
+            f'<path d="M5 12.2h3.8v7.6H5M27 12.2h-3.8v7.6H27"/></g></svg>')
+
 
 BASE = f"""<style>
 @font-face{{font-family:Inter;src:url({FONT}) format('woff2');font-weight:100 900}}
 *{{margin:0;box-sizing:border-box}} html,body{{background:transparent}}
 body{{font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased}}
+svg{{display:block}}
 </style>"""
 
 
-def icon_html(size: int, pad: float, radius: float) -> str:
+def icon_html(size: int, pad: float = 0.0, square: bool = False) -> str:
+    """App icon. pad > 0 puts the mark inside a solid field (maskable safe zone)."""
     inner = size * (1 - 2 * pad)
+    svg = logo_svg()
+    if square:                     # iOS rounds the corners itself
+        svg = svg.replace('rx="8" fill', 'rx="0" fill')
     return BASE + f"""<div style="width:{size}px;height:{size}px;display:grid;place-items:center;
-      background:{NAVY if pad else 'transparent'}">
-      <div style="width:{inner}px;height:{inner}px;border-radius:{inner * radius}px;
-        background:{TILE};box-shadow:inset 0 0 0 {max(1, inner*0.03)}px rgba(60,200,220,.45);
-        display:grid;place-items:center;
-        font-weight:800;font-size:{inner * 0.62}px;color:{GOLD};letter-spacing:-.04em;
-        line-height:1;padding-bottom:{inner * 0.02}px">P</div></div>"""
+      background:{TILE if pad else 'transparent'}">
+      <div style="width:{inner}px;height:{inner}px">{svg.replace('<svg ', f'<svg width="{inner}" height="{inner}" ')}</div>
+    </div>"""
 
 
-OG = BASE + f"""<div style="width:1200px;height:630px;background:{NAVY};color:#F2F5F7;
+OG = BASE + f"""<div style="width:1200px;height:630px;background:{BG};color:#F2F5F7;
   padding:72px 80px;display:flex;flex-direction:column;justify-content:space-between">
   <div style="display:flex;align-items:center;gap:22px">
-    <div style="width:84px;height:84px;border-radius:22px;background:{TILE};
-      box-shadow:inset 0 0 0 2px rgba(60,200,220,.45);
-      display:grid;place-items:center;font-weight:800;font-size:54px;color:{GOLD}">P</div>
+    {logo_svg().replace('<svg ', '<svg width="84" height="84" ')}
     <div style="font-weight:800;font-size:56px;letter-spacing:-.02em">PitchLab</div>
   </div>
   <div>
     <div style="font-weight:800;font-size:68px;line-height:1.05;letter-spacing:-.03em;max-width:980px">
-      Football predictions,<br><span style="color:{GOLD}">scored in public.</span></div>
+      Football predictions,<br><span style="color:{CYAN}">scored in public.</span></div>
     <div style="margin-top:22px;font-size:27px;color:#B1BAC3;max-width:960px;line-height:1.4">
       Match, player, corner and card probabilities, logged before kickoff.</div>
   </div>
   <div>
     <div style="display:flex;height:16px;border-radius:9px;overflow:hidden;width:100%">
-      <i style="width:52%;background:{GOLD}"></i><i style="width:24%;background:{GREY}"></i>
-      <i style="width:24%;background:{BLUE}"></i></div>
+      <i style="width:52%;background:{CYAN}"></i><i style="width:24%;background:{GREY}"></i>
+      <i style="width:24%;background:{AMBER}"></i></div>
     <div style="margin-top:18px;font-size:23px;color:#87929D;letter-spacing:.02em">
       Premier League · La Liga · Serie A · Bundesliga · Ligue 1</div>
   </div>
 </div>"""
-
-FAVICON_SVG = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="{GOLD}"/><stop offset="1" stop-color="{GOLD_DIM}"/></linearGradient></defs>
-<rect width="64" height="64" rx="15" fill="{TILE}"/>
-<rect x="1.5" y="1.5" width="61" height="61" rx="13.5" fill="none" stroke="{GOLD}" stroke-opacity=".45" stroke-width="2"/>
-<path d="M22 50V14h14.5c7.6 0 12.5 4.6 12.5 11.6S44.1 37.2 36.5 37.2H29.8V50zm7.8-19.3h5.9
-c3.6 0 5.6-1.9 5.6-5.1s-2-5.1-5.6-5.1h-5.9z" fill="{GOLD}"/></svg>
-"""
 
 
 async def shot(page, html, path, w, h):
@@ -80,19 +88,20 @@ async def shot(page, html, path, w, h):
 async def main():
     icons = STATIC / "icons"
     icons.mkdir(parents=True, exist_ok=True)
-    (icons / "favicon.svg").write_text(FAVICON_SVG)
+    (icons / "favicon.svg").write_text(logo_svg() + "\n")
+    (icons / "logo.svg").write_text(logo_svg() + "\n")
     exe = os.environ.get("CHROME")
     async with async_playwright() as p:
         b = await p.chromium.launch(executable_path=exe, args=["--no-sandbox"]) if exe \
             else await p.chromium.launch()
         pg = await b.new_page()
         await shot(pg, OG, STATIC / "og.png", 1200, 630)
-        await shot(pg, icon_html(32, 0, 0.24), icons / "favicon-32.png", 32, 32)
-        await shot(pg, icon_html(180, 0.0, 0.0), icons / "apple-touch-icon.png", 180, 180)
-        await shot(pg, icon_html(192, 0, 0.24), icons / "icon-192.png", 192, 192)
-        await shot(pg, icon_html(512, 0, 0.24), icons / "icon-512.png", 512, 512)
-        # maskable: art inside the 80% safe zone on a solid navy field
-        await shot(pg, icon_html(512, 0.18, 0.24), icons / "icon-maskable-512.png", 512, 512)
+        await shot(pg, icon_html(32), icons / "favicon-32.png", 32, 32)
+        await shot(pg, icon_html(180, square=True), icons / "apple-touch-icon.png", 180, 180)
+        await shot(pg, icon_html(192), icons / "icon-192.png", 192, 192)
+        await shot(pg, icon_html(512), icons / "icon-512.png", 512, 512)
+        # maskable: art inside the 80% safe zone on a solid field
+        await shot(pg, icon_html(512, pad=0.14), icons / "icon-maskable-512.png", 512, 512)
         await b.close()
     _shrink()
 
