@@ -5,7 +5,7 @@
    "home": "Atalanta",
    "kickoff": "2026-11-22T19:45:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.521,
@@ -19,7 +19,7 @@
    "home": "Bologna",
    "kickoff": "2026-11-22T17:00:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2365,
@@ -28,12 +28,26 @@
    },
    "result": null
   },
+  "135|2627|Cagliari|Milan": {
+   "away": "Milan",
+   "home": "Cagliari",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.5342,
+    "draw": 0.252,
+    "home": 0.2138
+   },
+   "result": null
+  },
   "135|2627|Como|Cagliari": {
    "away": "Cagliari",
    "home": "Como",
    "kickoff": "2026-11-21T14:00:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1578,
@@ -42,12 +56,54 @@
    },
    "result": null
   },
+  "135|2627|Como|Juventus": {
+   "away": "Juventus",
+   "home": "Como",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.32,
+    "draw": 0.2831,
+    "home": 0.3969
+   },
+   "result": null
+  },
+  "135|2627|Frosinone|Parma": {
+   "away": "Parma",
+   "home": "Frosinone",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.1476,
+    "draw": 0.1914,
+    "home": 0.6611
+   },
+   "result": null
+  },
+  "135|2627|Inter|Genoa": {
+   "away": "Genoa",
+   "home": "Inter",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.1085,
+    "draw": 0.168,
+    "home": 0.7235
+   },
+   "result": null
+  },
   "135|2627|Juventus|Venezia": {
    "away": "Venezia",
    "home": "Juventus",
    "kickoff": "2026-11-23T19:45:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1173,
@@ -61,7 +117,7 @@
    "home": "Lazio",
    "kickoff": "2026-11-21T14:00:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1438,
@@ -70,12 +126,26 @@
    },
    "result": null
   },
+  "135|2627|Lecce|Atalanta": {
+   "away": "Atalanta",
+   "home": "Lecce",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.5931,
+    "draw": 0.2383,
+    "home": 0.1686
+   },
+   "result": null
+  },
   "135|2627|Milan|Frosinone": {
    "away": "Frosinone",
    "home": "Milan",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3554,
@@ -89,7 +159,7 @@
    "home": "Monza",
    "kickoff": "2026-11-23T17:30:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.542,
@@ -103,7 +173,7 @@
    "home": "Napoli",
    "kickoff": "2026-11-21T19:45:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1628,
@@ -117,7 +187,7 @@
    "home": "Parma",
    "kickoff": "2026-11-21T17:00:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.6403,
@@ -126,12 +196,26 @@
    },
    "result": null
   },
+  "135|2627|Roma|Monza": {
+   "away": "Monza",
+   "home": "Roma",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.0683,
+    "draw": 0.1244,
+    "home": 0.8073
+   },
+   "result": null
+  },
   "135|2627|Sassuolo|Genoa": {
    "away": "Genoa",
    "home": "Sassuolo",
    "kickoff": "2026-11-22T11:30:00+00:00",
    "league_id": 135,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3474,
@@ -140,12 +224,68 @@
    },
    "result": null
   },
+  "135|2627|Sassuolo|Napoli": {
+   "away": "Napoli",
+   "home": "Sassuolo",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.5738,
+    "draw": 0.2254,
+    "home": 0.2008
+   },
+   "result": null
+  },
+  "135|2627|Torino|Lazio": {
+   "away": "Lazio",
+   "home": "Torino",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.4978,
+    "draw": 0.2515,
+    "home": 0.2507
+   },
+   "result": null
+  },
+  "135|2627|Udinese|Fiorentina": {
+   "away": "Fiorentina",
+   "home": "Udinese",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.425,
+    "draw": 0.2516,
+    "home": 0.3234
+   },
+   "result": null
+  },
+  "135|2627|Venezia|Bologna": {
+   "away": "Bologna",
+   "home": "Venezia",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 135,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.5347,
+    "draw": 0.2566,
+    "home": 0.2087
+   },
+   "result": null
+  },
   "140|2627|Alaves|La Coruna": {
    "away": "La Coruna",
    "home": "Alaves",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3126,
@@ -159,7 +299,7 @@
    "home": "Ath Bilbao",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.213,
@@ -173,7 +313,7 @@
    "home": "Barcelona",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1126,
@@ -182,12 +322,68 @@
    },
    "result": null
   },
+  "140|2627|Betis|Vallecano": {
+   "away": "Vallecano",
+   "home": "Betis",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.1997,
+    "draw": 0.2465,
+    "home": 0.5538
+   },
+   "result": null
+  },
+  "140|2627|Celta|Villarreal": {
+   "away": "Villarreal",
+   "home": "Celta",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.373,
+    "draw": 0.2614,
+    "home": 0.3657
+   },
+   "result": null
+  },
+  "140|2627|Elche|Ath Madrid": {
+   "away": "Ath Madrid",
+   "home": "Elche",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.4941,
+    "draw": 0.255,
+    "home": 0.2509
+   },
+   "result": null
+  },
+  "140|2627|Espanol|Getafe": {
+   "away": "Getafe",
+   "home": "Espanol",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.2431,
+    "draw": 0.3418,
+    "home": 0.4151
+   },
+   "result": null
+  },
   "140|2627|Getafe|Ath Madrid": {
    "away": "Ath Madrid",
    "home": "Getafe",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.4721,
@@ -196,12 +392,26 @@
    },
    "result": null
   },
+  "140|2627|La Coruna|Barcelona": {
+   "away": "Barcelona",
+   "home": "La Coruna",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.6341,
+    "draw": 0.1998,
+    "home": 0.1661
+   },
+   "result": null
+  },
   "140|2627|Levante|Elche": {
    "away": "Elche",
    "home": "Levante",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2914,
@@ -210,12 +420,40 @@
    },
    "result": null
   },
+  "140|2627|Levante|Santander": {
+   "away": "Santander",
+   "home": "Levante",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.1912,
+    "draw": 0.1823,
+    "home": 0.6265
+   },
+   "result": null
+  },
+  "140|2627|Malaga|Ath Bilbao": {
+   "away": "Ath Bilbao",
+   "home": "Malaga",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.5096,
+    "draw": 0.2772,
+    "home": 0.2132
+   },
+   "result": null
+  },
   "140|2627|Osasuna|Malaga": {
    "away": "Malaga",
    "home": "Osasuna",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1563,
@@ -224,12 +462,26 @@
    },
    "result": null
   },
+  "140|2627|Real Madrid|Alaves": {
+   "away": "Alaves",
+   "home": "Real Madrid",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.0818,
+    "draw": 0.1593,
+    "home": 0.759
+   },
+   "result": null
+  },
   "140|2627|Real Madrid|Celta": {
    "away": "Celta",
    "home": "Real Madrid",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1104,
@@ -243,7 +495,7 @@
    "home": "Santander",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.4591,
@@ -257,7 +509,7 @@
    "home": "Sevilla",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.4088,
@@ -266,12 +518,40 @@
    },
    "result": null
   },
+  "140|2627|Sociedad|Sevilla": {
+   "away": "Sevilla",
+   "home": "Sociedad",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.2446,
+    "draw": 0.2337,
+    "home": 0.5217
+   },
+   "result": null
+  },
+  "140|2627|Valencia|Osasuna": {
+   "away": "Osasuna",
+   "home": "Valencia",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 140,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.2837,
+    "draw": 0.2786,
+    "home": 0.4377
+   },
+   "result": null
+  },
   "140|2627|Vallecano|Valencia": {
    "away": "Valencia",
    "home": "Vallecano",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 140,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2414,
@@ -285,7 +565,7 @@
    "home": "Arsenal",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2394,
@@ -299,7 +579,7 @@
    "home": "Aston Villa",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2165,
@@ -313,7 +593,7 @@
    "home": "Bournemouth",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2708,
@@ -327,7 +607,7 @@
    "home": "Brentford",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2597,
@@ -341,7 +621,7 @@
    "home": "Brighton",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.226,
@@ -355,7 +635,7 @@
    "home": "Chelsea",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2579,
@@ -369,7 +649,7 @@
    "home": "Coventry",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3548,
@@ -383,7 +663,7 @@
    "home": "Crystal Palace",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3659,
@@ -397,7 +677,7 @@
    "home": "Everton",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.4178,
@@ -411,7 +691,7 @@
    "home": "Fulham",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3745,
@@ -425,7 +705,7 @@
    "home": "Hull",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.4082,
@@ -439,7 +719,7 @@
    "home": "Ipswich",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.5456,
@@ -453,7 +733,7 @@
    "home": "Leeds",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1968,
@@ -467,7 +747,7 @@
    "home": "Liverpool",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2272,
@@ -481,7 +761,7 @@
    "home": "Man City",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1486,
@@ -495,7 +775,7 @@
    "home": "Man United",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3459,
@@ -509,7 +789,7 @@
    "home": "Newcastle",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.5375,
@@ -523,7 +803,7 @@
    "home": "Nott'm Forest",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3579,
@@ -537,7 +817,7 @@
    "home": "Sunderland",
    "kickoff": "2026-11-28T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3328,
@@ -551,7 +831,7 @@
    "home": "Tottenham",
    "kickoff": "2026-11-21T15:00:00+00:00",
    "league_id": 39,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1977,
@@ -565,7 +845,7 @@
    "home": "Angers",
    "kickoff": "2026-11-28T16:15:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.5597,
@@ -574,12 +854,26 @@
    },
    "result": null
   },
+  "61|2627|Auxerre|Marseille": {
+   "away": "Marseille",
+   "home": "Auxerre",
+   "kickoff": "2026-11-29T14:00:00+00:00",
+   "league_id": 61,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.5148,
+    "draw": 0.2314,
+    "home": 0.2538
+   },
+   "result": null
+  },
   "61|2627|Brest|Paris FC": {
    "away": "Paris FC",
    "home": "Brest",
    "kickoff": "2026-11-27T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3785,
@@ -593,7 +887,7 @@
    "home": "Le Havre",
    "kickoff": "2026-11-28T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.5049,
@@ -607,7 +901,7 @@
    "home": "Le Mans",
    "kickoff": "2026-11-28T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.5221,
@@ -621,7 +915,7 @@
    "home": "Lens",
    "kickoff": "2026-11-21T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2187,
@@ -635,7 +929,7 @@
    "home": "Lille",
    "kickoff": "2026-11-21T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2778,
@@ -649,7 +943,7 @@
    "home": "Lorient",
    "kickoff": "2026-11-22T16:15:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3384,
@@ -663,7 +957,7 @@
    "home": "Marseille",
    "kickoff": "2026-11-22T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1219,
@@ -677,7 +971,7 @@
    "home": "Monaco",
    "kickoff": "2026-11-21T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1774,
@@ -691,7 +985,7 @@
    "home": "Nice",
    "kickoff": "2026-11-21T16:15:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.6036,
@@ -705,7 +999,7 @@
    "home": "Nice",
    "kickoff": "2026-11-28T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1633,
@@ -719,7 +1013,7 @@
    "home": "Paris FC",
    "kickoff": "2026-11-22T14:00:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1374,
@@ -733,7 +1027,7 @@
    "home": "Paris SG",
    "kickoff": "2026-11-28T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1094,
@@ -747,7 +1041,7 @@
    "home": "Strasbourg",
    "kickoff": "2026-11-21T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2463,
@@ -756,12 +1050,26 @@
    },
    "result": null
   },
+  "61|2627|Toulouse|Rennes": {
+   "away": "Rennes",
+   "home": "Toulouse",
+   "kickoff": "2026-11-29T16:15:00+00:00",
+   "league_id": 61,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.3283,
+    "draw": 0.2422,
+    "home": 0.4295
+   },
+   "result": null
+  },
   "61|2627|Troyes|Le Havre": {
    "away": "Le Havre",
    "home": "Troyes",
    "kickoff": "2026-11-20T19:45:00+00:00",
    "league_id": 61,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3268,
@@ -775,7 +1083,7 @@
    "home": "Augsburg",
    "kickoff": "2026-11-22T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3594,
@@ -789,7 +1097,7 @@
    "home": "Bayern Munich",
    "kickoff": "2026-11-20T19:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.0326,
@@ -798,12 +1106,26 @@
    },
    "result": null
   },
+  "78|2627|Dortmund|Leverkusen": {
+   "away": "Leverkusen",
+   "home": "Dortmund",
+   "kickoff": "2026-11-29T18:30:00+00:00",
+   "league_id": 78,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.2332,
+    "draw": 0.2281,
+    "home": 0.5387
+   },
+   "result": null
+  },
   "78|2627|Ein Frankfurt|Hoffenheim": {
    "away": "Hoffenheim",
    "home": "Ein Frankfurt",
    "kickoff": "2026-11-21T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.3019,
@@ -817,7 +1139,7 @@
    "home": "Elversberg",
    "kickoff": "2026-11-21T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2995,
@@ -831,7 +1153,7 @@
    "home": "FC Koln",
    "kickoff": "2026-11-28T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.4492,
@@ -840,12 +1162,26 @@
    },
    "result": null
   },
+  "78|2627|Freiburg|RB Leipzig": {
+   "away": "RB Leipzig",
+   "home": "Freiburg",
+   "kickoff": "2026-11-29T14:30:00+00:00",
+   "league_id": 78,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.4037,
+    "draw": 0.2402,
+    "home": 0.3561
+   },
+   "result": null
+  },
   "78|2627|Hamburg|Bayern Munich": {
    "away": "Bayern Munich",
    "home": "Hamburg",
    "kickoff": "2026-11-28T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.7977,
@@ -854,12 +1190,26 @@
    },
    "result": null
   },
+  "78|2627|Hoffenheim|Augsburg": {
+   "away": "Augsburg",
+   "home": "Hoffenheim",
+   "kickoff": "2026-11-29T16:30:00+00:00",
+   "league_id": 78,
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
+   "model_version": "2.0.0",
+   "outcome": {
+    "away": 0.257,
+    "draw": 0.2222,
+    "home": 0.5208
+   },
+   "result": null
+  },
   "78|2627|Leverkusen|Paderborn": {
    "away": "Paderborn",
    "home": "Leverkusen",
    "kickoff": "2026-11-21T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.1545,
@@ -873,7 +1223,7 @@
    "home": "M'gladbach",
    "kickoff": "2026-11-21T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.5785,
@@ -887,7 +1237,7 @@
    "home": "Mainz",
    "kickoff": "2026-11-28T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2001,
@@ -901,7 +1251,7 @@
    "home": "Paderborn",
    "kickoff": "2026-11-28T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2139,
@@ -915,7 +1265,7 @@
    "home": "Schalke 04",
    "kickoff": "2026-11-21T17:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.4843,
@@ -929,7 +1279,7 @@
    "home": "Stuttgart",
    "kickoff": "2026-11-28T17:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2241,
@@ -943,7 +1293,7 @@
    "home": "Union Berlin",
    "kickoff": "2026-11-21T14:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.5465,
@@ -957,7 +1307,7 @@
    "home": "Werder Bremen",
    "kickoff": "2026-11-22T16:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2525,
@@ -971,7 +1321,7 @@
    "home": "Werder Bremen",
    "kickoff": "2026-11-27T19:30:00+00:00",
    "league_id": 78,
-   "logged_at": "2026-11-15T06:34:26.541598+00:00",
+   "logged_at": "2026-11-15T18:52:27.337368+00:00",
    "model_version": "2.0.0",
    "outcome": {
     "away": 0.2788,
