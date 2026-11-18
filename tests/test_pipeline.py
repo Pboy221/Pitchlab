@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from pipeline import backtest, build, config as C, ledger, markets, ratings, sources, styles
+from pipeline import backtest, build, config as C, ledger, markets, odds, ratings, sources, styles
 from pipeline.names import build_map, match_name
 
 
@@ -168,3 +168,51 @@ def test_full_build_offline(tmp_path, monkeypatch):
         js.write_text("\n".join(scripts))
         r = subprocess.run(["node", "--check", str(js)], capture_output=True, text=True)
         assert r.returncode == 0, r.stderr
+
+
+# ------------------------------------------------------------------- odds
+def test_implied_probabilities_remove_the_margin():
+    o = np.array([[2.0, 3.4, 4.0], [1.25, 6.0, 12.0]])
+    p = odds.implied(o)
+    assert np.allclose(p.sum(axis=1), 1.0)
+    assert (odds.overround(o) > 0).all()
+    assert (p.argmax(axis=1) == o.argmin(axis=1)).all()     # shortest price = favourite
+
+
+def test_value_bets_bookkeeping():
+    P = np.array([[0.6, 0.2, 0.2], [0.3, 0.3, 0.4], [0.5, 0.25, 0.25]])
+    o = np.array([[2.0, 3.5, 4.0], [3.0, 3.2, 2.2], [1.8, 3.6, 4.5]])
+    y = np.array([0, 2, 1])
+    r = odds.value_bets(P, o, y, edge=0.05)
+    # match 1: home EV 0.2 -> bet, wins at 2.0 (+1). match 2: best EV is draw -0.04 -> no bet.
+    # match 3: away EV 0.125 -> bet, loses (-1).
+    assert r["n_bets"] == 2 and r["profit"] == pytest.approx(0.0)
+    assert list(r["rows"]) == [0, 2]
+
+
+def test_fd_odds_columns_are_read():
+    raw = pd.DataFrame({"Date": ["16/08/2024"], "Time": ["20:00"], "HomeTeam": ["Man United"],
+                        "AwayTeam": ["Fulham"], "FTHG": [1], "FTAG": [0],
+                        "PSCH": [1.65], "PSCD": [4.2], "PSCA": [5.4],
+                        "AvgH": [1.62], "AvgD": [4.1], "AvgA": [5.2]})
+    df = sources._normalise_fd(raw, 39, "2425")
+    assert df.loc[0, "odds_psc_h"] == 1.65 and df.loc[0, "odds_avg_a"] == 5.2
+    assert np.isnan(df.loc[0, "odds_avgc_h"])                  # column absent -> NaN
+
+
+def test_backtest_scores_against_a_known_market():
+    df = synthetic_league()
+    # a "bookmaker" that knows the true goal rates should beat the fitted model
+    att = {f"Team{i:02d}": a for i, a in enumerate(np.linspace(0.45, -0.45, 20))}
+    true = np.array([ratings.outcome(ratings.score_matrix(
+        np.exp(0.40 + att[h] - att[a]), np.exp(0.15 + att[a] - att[h])))
+        for h, a in zip(df["home"], df["away"])])
+    for book in odds.BENCHMARKS:
+        df[odds.cols(book)] = 1.0 / (true * 1.05)               # 5% margin
+    summary, _ = backtest.run(df, pd.Timestamp("2025-07-01", tz="UTC"),
+                              pd.Timestamp("2026-11-01", tz="UTC"))
+    vb = summary["vs_bookmakers"]["psc"]
+    assert vb["n_matches"] == summary["n_matches"]
+    assert vb["model_minus_book"] > 0 and vb["margin"] == pytest.approx(0.05, abs=1e-3)
+    assert summary["betting"] and summary["betting"][0]["n_bets"] >= 0
+    json.dumps(summary, allow_nan=False)                         # the site build needs this

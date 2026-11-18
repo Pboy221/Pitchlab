@@ -2,8 +2,9 @@
 
 Matches come out as a DataFrame with one row per match:
     league_id, season, kickoff (UTC), home, away, hg, ag,
-    hs, as_, hst, ast, hf, af, hc, ac, hy, ay, hr, ar, referee
-Stat columns are NaN where a source does not carry them.
+    hs, as_, hst, ast, hf, af, hc, ac, hy, ay, hr, ar, referee,
+    odds_<book>_h/d/a for each bookmaker benchmark in odds.BENCHMARKS
+Stat and odds columns are NaN where a source does not carry them.
 """
 from __future__ import annotations
 
@@ -18,7 +19,7 @@ import numpy as np
 import pandas as pd
 import requests
 
-from . import config as C
+from . import config as C, odds
 from .names import ALIASES, build_map
 
 log = logging.getLogger("pitchlab.sources")
@@ -27,6 +28,8 @@ HEADERS = {"User-Agent": "PitchLab/2.0 (+https://github.com) statistical model"}
 STAT_COLS = {"HS": "hs", "AS": "as_", "HST": "hst", "AST": "ast", "HF": "hf",
              "AF": "af", "HC": "hc", "AC": "ac", "HY": "hy", "AY": "ay",
              "HR": "hr", "AR": "ar"}
+# football-data.co.uk column prefixes for each benchmark in odds.BENCHMARKS
+ODDS_PREFIX = {"psc": "PSC", "avgc": "AvgC", "avg": "Avg"}
 
 
 # ------------------------------------------------------------------ helpers
@@ -95,6 +98,11 @@ def _normalise_fd(df: pd.DataFrame, league_id: int, season: str) -> pd.DataFrame
     })
     for src, dst in STAT_COLS.items():
         out[dst] = pd.to_numeric(df[src], errors="coerce") if src in df else np.nan
+    # 1X2 bookmaker prices, used only to benchmark the model (see pipeline/odds.py)
+    for book, prefix in ODDS_PREFIX.items():
+        for side, col in zip("HDA", odds.cols(book)):
+            src = prefix + side
+            out[col] = pd.to_numeric(df[src], errors="coerce") if src in df else np.nan
     out.loc[out["referee"].isin(["nan", "", "None"]), "referee"] = np.nan
     return out.dropna(subset=["kickoff"])
 
@@ -124,6 +132,24 @@ def load_results(league: C.League, seasons: list[int], mode: str) -> pd.DataFram
         return pd.DataFrame()
     df = pd.concat(frames, ignore_index=True)
     return df.sort_values("kickoff").reset_index(drop=True)
+
+
+def load_results_dir(league: C.League, seasons: list[int], data_dir) -> pd.DataFrame:
+    """Same as load_results, but from local football-data CSVs laid out as
+    <data_dir>/<league.mirror>/season-<code>.csv (e.g. premier-league/season-2425.csv).
+    Used by the offline benchmark so results can be reproduced without the network."""
+    from pathlib import Path
+    frames = []
+    for start in seasons:
+        code = season_code(start)
+        path = Path(data_dir) / league.mirror / f"season-{code}.csv"
+        if not path.exists():
+            log.warning("%s %s: %s missing", league.name, code, path)
+            continue
+        frames.append(_normalise_fd(_read_csv(path.read_bytes()), league.id, code))
+    if not frames:
+        return pd.DataFrame()
+    return pd.concat(frames, ignore_index=True).sort_values("kickoff").reset_index(drop=True)
 
 
 def load_fd_fixtures() -> pd.DataFrame:

@@ -1,0 +1,1039 @@
+{
+ "test_seasons": "2021-22 to 2025-26",
+ "model_version": "2.0.0",
+ "overall": {
+  "n_matches": 8908,
+  "log_loss": 0.98937,
+  "brier": 0.58988,
+  "accuracy": 0.524,
+  "baseline_log_loss": 1.07434,
+  "baseline_brier": 0.65016,
+  "skill_vs_baseline": 0.0791,
+  "calibration_error": 0.0089,
+  "vs_bookmakers": {
+   "psc": {
+    "label": "Pinnacle closing",
+    "n_matches": 8054,
+    "book_log_loss": 0.96591,
+    "model_log_loss": 0.98735,
+    "model_minus_book": 0.02144,
+    "model_minus_book_ci95": [
+     0.01751,
+     0.02516
+    ],
+    "book_brier": 0.57423,
+    "book_accuracy": 0.5427,
+    "margin": 0.0272
+   },
+   "avgc": {
+    "label": "Market average closing",
+    "n_matches": 8908,
+    "book_log_loss": 0.96865,
+    "model_log_loss": 0.98937,
+    "model_minus_book": 0.02071,
+    "model_minus_book_ci95": [
+     0.01728,
+     0.02419
+    ],
+    "book_brier": 0.57599,
+    "book_accuracy": 0.5425,
+    "margin": 0.0473
+   },
+   "avg": {
+    "label": "Market average pre-match",
+    "n_matches": 8907,
+    "book_log_loss": 0.97075,
+    "model_log_loss": 0.98936,
+    "model_minus_book": 0.01861,
+    "model_minus_book_ci95": [
+     0.01544,
+     0.02201
+    ],
+    "book_brier": 0.57735,
+    "book_accuracy": 0.5376,
+    "margin": 0.0487
+   }
+  },
+  "betting": [
+   {
+    "edge": 0.02,
+    "n_bets": 6696,
+    "hit_rate": 0.2806,
+    "avg_odds": 4.2148,
+    "profit": -862.9,
+    "roi": -0.1289,
+    "roi_ci95": [
+     -0.1677,
+     -0.0897
+    ]
+   },
+   {
+    "edge": 0.05,
+    "n_bets": 5523,
+    "hit_rate": 0.2611,
+    "avg_odds": 4.418,
+    "profit": -829.67,
+    "roi": -0.1502,
+    "roi_ci95": [
+     -0.1956,
+     -0.1057
+    ]
+   },
+   {
+    "edge": 0.1,
+    "n_bets": 4004,
+    "hit_rate": 0.2383,
+    "avg_odds": 4.8209,
+    "profit": -661.26,
+    "roi": -0.1651,
+    "roi_ci95": [
+     -0.2191,
+     -0.1105
+    ]
+   }
+  ]
+ },
+ "leagues": {
+  "Premier League": {
+   "n_matches": 1900,
+   "log_loss": 0.97886,
+   "brier": 0.58246,
+   "accuracy": 0.5305,
+   "baseline_log_loss": 1.07006,
+   "baseline_brier": 0.64765,
+   "skill_vs_baseline": 0.0852,
+   "calibration_error": 0.0124,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 1730,
+     "book_log_loss": 0.94683,
+     "model_log_loss": 0.96982,
+     "model_minus_book": 0.02299,
+     "model_minus_book_ci95": [
+      0.01429,
+      0.03147
+     ],
+     "book_brier": 0.5608,
+     "book_accuracy": 0.5636,
+     "margin": 0.0274
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1900,
+     "book_log_loss": 0.95559,
+     "model_log_loss": 0.97886,
+     "model_minus_book": 0.02327,
+     "model_minus_book_ci95": [
+      0.01526,
+      0.03149
+     ],
+     "book_brier": 0.567,
+     "book_accuracy": 0.5595,
+     "margin": 0.0432
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1900,
+     "book_log_loss": 0.95937,
+     "model_log_loss": 0.97886,
+     "model_minus_book": 0.01949,
+     "model_minus_book_ci95": [
+      0.01215,
+      0.02716
+     ],
+     "book_brier": 0.56988,
+     "book_accuracy": 0.5532,
+     "margin": 0.0451
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1532,
+     "hit_rate": 0.2787,
+     "avg_odds": 4.7118,
+     "profit": -156.05,
+     "roi": -0.1019,
+     "roi_ci95": [
+      -0.1882,
+      -0.0113
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 1325,
+     "hit_rate": 0.2604,
+     "avg_odds": 4.9316,
+     "profit": -161.79,
+     "roi": -0.1221,
+     "roi_ci95": [
+      -0.2123,
+      -0.0221
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 1036,
+     "hit_rate": 0.2317,
+     "avg_odds": 5.3511,
+     "profit": -147.89,
+     "roi": -0.1428,
+     "roi_ci95": [
+      -0.2538,
+      -0.0242
+     ]
+    }
+   ]
+  },
+  "La Liga": {
+   "n_matches": 1900,
+   "log_loss": 0.98397,
+   "brier": 0.58572,
+   "accuracy": 0.5284,
+   "baseline_log_loss": 1.06701,
+   "baseline_brier": 0.64452,
+   "skill_vs_baseline": 0.0778,
+   "calibration_error": 0.0155,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 1708,
+     "book_log_loss": 0.96358,
+     "model_log_loss": 0.98236,
+     "model_minus_book": 0.01877,
+     "model_minus_book_ci95": [
+      0.01119,
+      0.02685
+     ],
+     "book_brier": 0.57243,
+     "book_accuracy": 0.5445,
+     "margin": 0.027
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1900,
+     "book_log_loss": 0.96562,
+     "model_log_loss": 0.98397,
+     "model_minus_book": 0.01835,
+     "model_minus_book_ci95": [
+      0.01139,
+      0.02515
+     ],
+     "book_brier": 0.5735,
+     "book_accuracy": 0.5432,
+     "margin": 0.0475
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1900,
+     "book_log_loss": 0.96685,
+     "model_log_loss": 0.98397,
+     "model_minus_book": 0.01712,
+     "model_minus_book_ci95": [
+      0.01064,
+      0.02355
+     ],
+     "book_brier": 0.57426,
+     "book_accuracy": 0.5421,
+     "margin": 0.0487
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1399,
+     "hit_rate": 0.2816,
+     "avg_odds": 3.9984,
+     "profit": -228.76,
+     "roi": -0.1635,
+     "roi_ci95": [
+      -0.2419,
+      -0.0794
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 1119,
+     "hit_rate": 0.2636,
+     "avg_odds": 4.2015,
+     "profit": -221.93,
+     "roi": -0.1983,
+     "roi_ci95": [
+      -0.2809,
+      -0.1014
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 787,
+     "hit_rate": 0.2402,
+     "avg_odds": 4.5532,
+     "profit": -157.96,
+     "roi": -0.2007,
+     "roi_ci95": [
+      -0.3107,
+      -0.0844
+     ]
+    }
+   ]
+  },
+  "Serie A": {
+   "n_matches": 1900,
+   "log_loss": 0.98777,
+   "brier": 0.58952,
+   "accuracy": 0.53,
+   "baseline_log_loss": 1.08721,
+   "baseline_brier": 0.65899,
+   "skill_vs_baseline": 0.0915,
+   "calibration_error": 0.0136,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 1718,
+     "book_log_loss": 0.96874,
+     "model_log_loss": 0.98914,
+     "model_minus_book": 0.0204,
+     "model_minus_book_ci95": [
+      0.01273,
+      0.02845
+     ],
+     "book_brier": 0.57759,
+     "book_accuracy": 0.5361,
+     "margin": 0.0272
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1900,
+     "book_log_loss": 0.96922,
+     "model_log_loss": 0.98777,
+     "model_minus_book": 0.01855,
+     "model_minus_book_ci95": [
+      0.01145,
+      0.02541
+     ],
+     "book_brier": 0.5774,
+     "book_accuracy": 0.5374,
+     "margin": 0.0488
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1899,
+     "book_log_loss": 0.97145,
+     "model_log_loss": 0.98772,
+     "model_minus_book": 0.01627,
+     "model_minus_book_ci95": [
+      0.0093,
+      0.02238
+     ],
+     "book_brier": 0.5786,
+     "book_accuracy": 0.5319,
+     "margin": 0.0498
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1385,
+     "hit_rate": 0.2823,
+     "avg_odds": 4.1248,
+     "profit": -184.83,
+     "roi": -0.1335,
+     "roi_ci95": [
+      -0.2148,
+      -0.0456
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 1137,
+     "hit_rate": 0.2542,
+     "avg_odds": 4.3411,
+     "profit": -186.76,
+     "roi": -0.1643,
+     "roi_ci95": [
+      -0.2618,
+      -0.0665
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 786,
+     "hit_rate": 0.2265,
+     "avg_odds": 4.7441,
+     "profit": -165.5,
+     "roi": -0.2106,
+     "roi_ci95": [
+      -0.3321,
+      -0.0867
+     ]
+    }
+   ]
+  },
+  "Bundesliga": {
+   "n_matches": 1530,
+   "log_loss": 0.99607,
+   "brier": 0.59426,
+   "accuracy": 0.5124,
+   "baseline_log_loss": 1.07309,
+   "baseline_brier": 0.64927,
+   "skill_vs_baseline": 0.0718,
+   "calibration_error": 0.0199,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 1373,
+     "book_log_loss": 0.97112,
+     "model_log_loss": 0.9969,
+     "model_minus_book": 0.02578,
+     "model_minus_book_ci95": [
+      0.01656,
+      0.03636
+     ],
+     "book_brier": 0.57673,
+     "book_accuracy": 0.5404,
+     "margin": 0.0274
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1530,
+     "book_log_loss": 0.97217,
+     "model_log_loss": 0.99607,
+     "model_minus_book": 0.02391,
+     "model_minus_book_ci95": [
+      0.01462,
+      0.03305
+     ],
+     "book_brier": 0.57728,
+     "book_accuracy": 0.5425,
+     "margin": 0.0475
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1530,
+     "book_log_loss": 0.97501,
+     "model_log_loss": 0.99607,
+     "model_minus_book": 0.02107,
+     "model_minus_book_ci95": [
+      0.01236,
+      0.0292
+     ],
+     "book_brier": 0.57925,
+     "book_accuracy": 0.5307,
+     "margin": 0.0486
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1126,
+     "hit_rate": 0.3011,
+     "avg_odds": 3.948,
+     "profit": -113.54,
+     "roi": -0.1008,
+     "roi_ci95": [
+      -0.1968,
+      -0.0023
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 901,
+     "hit_rate": 0.2752,
+     "avg_odds": 4.1076,
+     "profit": -110.63,
+     "roi": -0.1228,
+     "roi_ci95": [
+      -0.2336,
+      -0.0005
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 626,
+     "hit_rate": 0.2508,
+     "avg_odds": 4.5002,
+     "profit": -109.61,
+     "roi": -0.1751,
+     "roi_ci95": [
+      -0.3145,
+      -0.0303
+     ]
+    }
+   ]
+  },
+  "Ligue 1": {
+   "n_matches": 1678,
+   "log_loss": 1.00308,
+   "brier": 0.59938,
+   "accuracy": 0.5155,
+   "baseline_log_loss": 1.07407,
+   "baseline_brier": 0.6502,
+   "skill_vs_baseline": 0.0661,
+   "calibration_error": 0.0082,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 1525,
+     "book_log_loss": 0.98226,
+     "model_log_loss": 1.00221,
+     "model_minus_book": 0.01994,
+     "model_minus_book_ci95": [
+      0.01115,
+      0.02861
+     ],
+     "book_brier": 0.58544,
+     "book_accuracy": 0.5266,
+     "margin": 0.0269
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1678,
+     "book_log_loss": 0.98304,
+     "model_log_loss": 1.00308,
+     "model_minus_book": 0.02004,
+     "model_minus_book_ci95": [
+      0.01145,
+      0.02825
+     ],
+     "book_brier": 0.5862,
+     "book_accuracy": 0.5286,
+     "margin": 0.0498
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1678,
+     "book_log_loss": 0.98336,
+     "model_log_loss": 1.00308,
+     "model_minus_book": 0.01972,
+     "model_minus_book_ci95": [
+      0.01182,
+      0.02723
+     ],
+     "book_brier": 0.58616,
+     "book_accuracy": 0.5274,
+     "margin": 0.0515
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1254,
+     "hit_rate": 0.2616,
+     "avg_odds": 4.1881,
+     "profit": -179.72,
+     "roi": -0.1433,
+     "roi_ci95": [
+      -0.2347,
+      -0.0541
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 1041,
+     "hit_rate": 0.2546,
+     "avg_odds": 4.3497,
+     "profit": -148.56,
+     "roi": -0.1427,
+     "roi_ci95": [
+      -0.2418,
+      -0.0434
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 769,
+     "hit_rate": 0.2471,
+     "avg_odds": 4.7202,
+     "profit": -80.3,
+     "roi": -0.1044,
+     "roi_ci95": [
+      -0.2282,
+      0.0248
+     ]
+    }
+   ]
+  }
+ },
+ "seasons": {
+  "2122": {
+   "n_matches": 1826,
+   "log_loss": 0.99149,
+   "brier": 0.59129,
+   "accuracy": 0.5197,
+   "baseline_log_loss": 1.07713,
+   "baseline_brier": 0.65226,
+   "skill_vs_baseline": 0.0795,
+   "calibration_error": 0.017,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 1826,
+     "book_log_loss": 0.97575,
+     "model_log_loss": 0.99149,
+     "model_minus_book": 0.01573,
+     "model_minus_book_ci95": [
+      0.00807,
+      0.02365
+     ],
+     "book_brier": 0.58024,
+     "book_accuracy": 0.5334,
+     "margin": 0.0242
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1826,
+     "book_log_loss": 0.97552,
+     "model_log_loss": 0.99149,
+     "model_minus_book": 0.01597,
+     "model_minus_book_ci95": [
+      0.0085,
+      0.02369
+     ],
+     "book_brier": 0.5801,
+     "book_accuracy": 0.5318,
+     "margin": 0.0432
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1825,
+     "book_log_loss": 0.97731,
+     "model_log_loss": 0.99144,
+     "model_minus_book": 0.01413,
+     "model_minus_book_ci95": [
+      0.00698,
+      0.02087
+     ],
+     "book_brier": 0.58129,
+     "book_accuracy": 0.5271,
+     "margin": 0.0442
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1385,
+     "hit_rate": 0.2816,
+     "avg_odds": 4.3104,
+     "profit": -102.04,
+     "roi": -0.0737,
+     "roi_ci95": [
+      -0.1686,
+      0.0255
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 1167,
+     "hit_rate": 0.2716,
+     "avg_odds": 4.5331,
+     "profit": -61.91,
+     "roi": -0.0531,
+     "roi_ci95": [
+      -0.1603,
+      0.0656
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 844,
+     "hit_rate": 0.2488,
+     "avg_odds": 5.0032,
+     "profit": -55.09,
+     "roi": -0.0653,
+     "roi_ci95": [
+      -0.1908,
+      0.0709
+     ]
+    }
+   ]
+  },
+  "2223": {
+   "n_matches": 1826,
+   "log_loss": 0.99714,
+   "brier": 0.59469,
+   "accuracy": 0.5203,
+   "baseline_log_loss": 1.06569,
+   "baseline_brier": 0.64402,
+   "skill_vs_baseline": 0.0643,
+   "calibration_error": 0.0058,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 1826,
+     "book_log_loss": 0.97495,
+     "model_log_loss": 0.99714,
+     "model_minus_book": 0.0222,
+     "model_minus_book_ci95": [
+      0.01429,
+      0.03025
+     ],
+     "book_brier": 0.58019,
+     "book_accuracy": 0.5345,
+     "margin": 0.0243
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1826,
+     "book_log_loss": 0.97564,
+     "model_log_loss": 0.99714,
+     "model_minus_book": 0.0215,
+     "model_minus_book_ci95": [
+      0.01378,
+      0.02947
+     ],
+     "book_brier": 0.58059,
+     "book_accuracy": 0.5411,
+     "margin": 0.0434
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1826,
+     "book_log_loss": 0.9779,
+     "model_log_loss": 0.99714,
+     "model_minus_book": 0.01924,
+     "model_minus_book_ci95": [
+      0.01158,
+      0.02665
+     ],
+     "book_brier": 0.58206,
+     "book_accuracy": 0.5411,
+     "margin": 0.044
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1389,
+     "hit_rate": 0.2981,
+     "avg_odds": 4.1013,
+     "profit": -157.94,
+     "roi": -0.1137,
+     "roi_ci95": [
+      -0.2005,
+      -0.0283
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 1127,
+     "hit_rate": 0.2795,
+     "avg_odds": 4.3359,
+     "profit": -172.3,
+     "roi": -0.1529,
+     "roi_ci95": [
+      -0.2446,
+      -0.0552
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 824,
+     "hit_rate": 0.2585,
+     "avg_odds": 4.7545,
+     "profit": -130.95,
+     "roi": -0.1589,
+     "roi_ci95": [
+      -0.2784,
+      -0.043
+     ]
+    }
+   ]
+  },
+  "2324": {
+   "n_matches": 1752,
+   "log_loss": 0.9759,
+   "brier": 0.58171,
+   "accuracy": 0.5348,
+   "baseline_log_loss": 1.07665,
+   "baseline_brier": 0.65171,
+   "skill_vs_baseline": 0.0936,
+   "calibration_error": 0.0135,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 1752,
+     "book_log_loss": 0.95246,
+     "model_log_loss": 0.9759,
+     "model_minus_book": 0.02344,
+     "model_minus_book_ci95": [
+      0.01584,
+      0.03127
+     ],
+     "book_brier": 0.56568,
+     "book_accuracy": 0.5588,
+     "margin": 0.0287
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1752,
+     "book_log_loss": 0.95331,
+     "model_log_loss": 0.9759,
+     "model_minus_book": 0.02259,
+     "model_minus_book_ci95": [
+      0.01509,
+      0.03031
+     ],
+     "book_brier": 0.56613,
+     "book_accuracy": 0.5582,
+     "margin": 0.0433
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1752,
+     "book_log_loss": 0.95555,
+     "model_log_loss": 0.9759,
+     "model_minus_book": 0.02035,
+     "model_minus_book_ci95": [
+      0.01309,
+      0.02751
+     ],
+     "book_brier": 0.56741,
+     "book_accuracy": 0.5502,
+     "margin": 0.0437
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1339,
+     "hit_rate": 0.2756,
+     "avg_odds": 4.1574,
+     "profit": -266.6,
+     "roi": -0.1991,
+     "roi_ci95": [
+      -0.2763,
+      -0.1171
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 1107,
+     "hit_rate": 0.252,
+     "avg_odds": 4.3547,
+     "profit": -241.0,
+     "roi": -0.2177,
+     "roi_ci95": [
+      -0.3069,
+      -0.1227
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 799,
+     "hit_rate": 0.2253,
+     "avg_odds": 4.6931,
+     "profit": -205.55,
+     "roi": -0.2573,
+     "roi_ci95": [
+      -0.366,
+      -0.146
+     ]
+    }
+   ]
+  },
+  "2425": {
+   "n_matches": 1752,
+   "log_loss": 0.98527,
+   "brier": 0.58707,
+   "accuracy": 0.528,
+   "baseline_log_loss": 1.07935,
+   "baseline_brier": 0.65401,
+   "skill_vs_baseline": 0.0872,
+   "calibration_error": 0.0114,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 1752,
+     "book_log_loss": 0.9606,
+     "model_log_loss": 0.98527,
+     "model_minus_book": 0.02466,
+     "model_minus_book_ci95": [
+      0.01677,
+      0.03267
+     ],
+     "book_brier": 0.57062,
+     "book_accuracy": 0.5474,
+     "margin": 0.0301
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1752,
+     "book_log_loss": 0.96076,
+     "model_log_loss": 0.98527,
+     "model_minus_book": 0.0245,
+     "model_minus_book_ci95": [
+      0.01684,
+      0.03218
+     ],
+     "book_brier": 0.57071,
+     "book_accuracy": 0.5474,
+     "margin": 0.0457
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1752,
+     "book_log_loss": 0.96402,
+     "model_log_loss": 0.98527,
+     "model_minus_book": 0.02124,
+     "model_minus_book_ci95": [
+      0.01416,
+      0.02849
+     ],
+     "book_brier": 0.57309,
+     "book_accuracy": 0.536,
+     "margin": 0.0477
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1354,
+     "hit_rate": 0.2806,
+     "avg_odds": 4.2705,
+     "profit": -156.89,
+     "roi": -0.1159,
+     "roi_ci95": [
+      -0.2049,
+      -0.0321
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 1121,
+     "hit_rate": 0.2596,
+     "avg_odds": 4.4175,
+     "profit": -180.82,
+     "roi": -0.1613,
+     "roi_ci95": [
+      -0.2491,
+      -0.0677
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 829,
+     "hit_rate": 0.234,
+     "avg_odds": 4.7802,
+     "profit": -165.24,
+     "roi": -0.1993,
+     "roi_ci95": [
+      -0.3105,
+      -0.0836
+     ]
+    }
+   ]
+  },
+  "2526": {
+   "n_matches": 1752,
+   "log_loss": 0.99662,
+   "brier": 0.59436,
+   "accuracy": 0.5177,
+   "baseline_log_loss": 1.07314,
+   "baseline_brier": 0.64896,
+   "skill_vs_baseline": 0.0713,
+   "calibration_error": 0.0153,
+   "vs_bookmakers": {
+    "psc": {
+     "label": "Pinnacle closing",
+     "n_matches": 898,
+     "book_log_loss": 0.96407,
+     "model_log_loss": 0.98542,
+     "model_minus_book": 0.02135,
+     "model_minus_book_ci95": [
+      0.00944,
+      0.03276
+     ],
+     "book_brier": 0.57363,
+     "book_accuracy": 0.5379,
+     "margin": 0.0303
+    },
+    "avgc": {
+     "label": "Market average closing",
+     "n_matches": 1752,
+     "book_log_loss": 0.97744,
+     "model_log_loss": 0.99662,
+     "model_minus_book": 0.01918,
+     "model_minus_book_ci95": [
+      0.01142,
+      0.027
+     ],
+     "book_brier": 0.58204,
+     "book_accuracy": 0.5348,
+     "margin": 0.0612
+    },
+    "avg": {
+     "label": "Market average pre-match",
+     "n_matches": 1752,
+     "book_log_loss": 0.97837,
+     "model_log_loss": 0.99662,
+     "model_minus_book": 0.01825,
+     "model_minus_book_ci95": [
+      0.01158,
+      0.02552
+     ],
+     "book_brier": 0.58254,
+     "book_accuracy": 0.5337,
+     "margin": 0.0641
+    }
+   },
+   "betting": [
+    {
+     "edge": 0.02,
+     "n_bets": 1229,
+     "hit_rate": 0.2653,
+     "avg_odds": 4.2366,
+     "profit": -179.43,
+     "roi": -0.146,
+     "roi_ci95": [
+      -0.2385,
+      -0.0502
+     ]
+    },
+    {
+     "edge": 0.05,
+     "n_bets": 1001,
+     "hit_rate": 0.2398,
+     "avg_odds": 4.4469,
+     "profit": -173.64,
+     "roi": -0.1735,
+     "roi_ci95": [
+      -0.2765,
+      -0.072
+     ]
+    },
+    {
+     "edge": 0.1,
+     "n_bets": 708,
+     "hit_rate": 0.2218,
+     "avg_odds": 4.8731,
+     "profit": -104.43,
+     "roi": -0.1475,
+     "roi_ci95": [
+      -0.2789,
+      -0.0108
+     ]
+    }
+   ]
+  }
+ },
+ "bets_by_outcome": {
+  "home": {
+   "n_bets": 1894,
+   "roi": -0.1459
+  },
+  "draw": {
+   "n_bets": 603,
+   "roi": -0.0984
+  },
+  "away": {
+   "n_bets": 3026,
+   "roi": -0.1633
+  }
+ },
+ "favourite": {
+  "book": 0.5287,
+  "model": 0.5108,
+  "actual_win_rate": 0.5427
+ }
+}

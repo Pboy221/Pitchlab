@@ -610,6 +610,9 @@ function renderAccuracy(){
         <span class="v">${b.brier.toFixed(3)}<small>vs ${b.baseline_brier.toFixed(3)}</small></span></div>
       <div class="kv"><span class="k">Matches tested</span>
         <span class="v">${b.n_matches}<small>${pct1(b.accuracy)} called right</small></span></div>
+      ${b.vs_bookmakers && b.vs_bookmakers.psc ? `
+      <div class="kv"><span class="k">Bookmakers</span>
+        <span class="v">${b.vs_bookmakers.psc.book_log_loss.toFixed(3)}<small>log loss</small></span></div>` : ''}
     </section>
 
     <section>
@@ -636,6 +639,10 @@ function renderAccuracy(){
           <p><b>Log loss</b> is the real score. Accuracy is shown for sanity only:
           with about a quarter of matches drawn, calling the winner is a poor test
           of whether the probabilities are right.</p>
+          <p><b>Bookmakers</b> is the log loss of Pinnacle's closing odds (margin
+          removed) on the matches that have them. The closing line is the sharpest forecast
+          there is, and PitchLab does not beat it: over five seasons it trails by
+          about 0.02. That is why nothing here is a tip.</p>
           <p>Every match was predicted using only data dated before it.</p>
           ${Object.values(DATA.model_notes || {}).map(n => `<p>${esc(n)}</p>`).join('')}
         </div>
