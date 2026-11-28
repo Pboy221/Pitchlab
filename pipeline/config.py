@@ -36,7 +36,7 @@ FD_TIME_ZONE = "Europe/London"
 
 # --------------------------------------------------------------------- site
 # Public address of the site. Change this one line if you move to a custom domain.
-SITE_URL = "https://pboy221.github.io/Pitchlab/"
+SITE_URL = "https://ahsabahmad221.github.io/Pitchlab/"
 
 # ------------------------------------------------------------------- model
 MODEL_VERSION = "2.0.0"
